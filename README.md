@@ -1,0 +1,1 @@
+Teller is a multi-source configuration server/library. Initially, it is intended to support Git and a local filesystem.

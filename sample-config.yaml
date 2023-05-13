@@ -1,0 +1,5 @@
+sources:
+  - name: some-private-git
+    type: git
+    config:
+      repository: https://some-git-instance.bsavage.xyz/some-repo.git
