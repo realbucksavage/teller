@@ -14,7 +14,7 @@ func init() {
 	sources.RegisterFactory("git", teller.NewFactory(newConfigSource, defaultConfiguration))
 }
 
-func newConfigSource(name string, cfg teller.Configuration) (teller.ConfigSource, error) {
+func newConfigSource(name string, priority int, cfg teller.Configuration) (teller.ConfigSource, error) {
 
 	oCfg := *(cfg.(*Configuration))
 

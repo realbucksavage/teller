@@ -10,6 +10,7 @@ type ConfigSource interface {
 	Name() string
 	Refresh() error
 	RefreshRate() int
+	Priority() int
 	Load(application, profile, label string) (map[string]interface{}, error)
 
 	io.Closer

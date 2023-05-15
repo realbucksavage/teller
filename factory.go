@@ -1,10 +1,10 @@
 package teller
 
 type configFn func() Configuration
-type newSourceFn func(name string, cfg Configuration) (ConfigSource, error)
+type newSourceFn func(name string, priority int, cfg Configuration) (ConfigSource, error)
 
 type SourceFactory interface {
-	New(name string, cfg Configuration) (ConfigSource, error)
+	New(name string, priority int, cfg Configuration) (ConfigSource, error)
 	DefaultConfig() Configuration
 }
 
@@ -13,8 +13,8 @@ type defaultSourceFactory struct {
 	defaultConfigFn configFn
 }
 
-func (factory *defaultSourceFactory) New(name string, cfg Configuration) (ConfigSource, error) {
-	return factory.newFn(name, cfg)
+func (factory *defaultSourceFactory) New(name string, priotity int, cfg Configuration) (ConfigSource, error) {
+	return factory.newFn(name, priotity, cfg)
 }
 
 func (factory *defaultSourceFactory) DefaultConfig() Configuration {
